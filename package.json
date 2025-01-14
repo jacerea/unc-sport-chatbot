@@ -1,0 +1,29 @@
+{
+  "name": "discord_unc_chatbot",
+  "version": "1.0.0",
+  "description": "A discord chatbot for UNC sport schedules and updates",
+  "keywords": [
+    "discord",
+    "chatbot",
+    "nodejs",
+    "sports"
+  ],
+  "homepage": "https://github.com/jacerea/unc-sport-chatbot#readme",
+  "bugs": {
+    "url": "https://github.com/jacerea/unc-sport-chatbot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacerea/unc-sport-chatbot.git"
+  },
+  "license": "MIT",
+  "author": "Jace Rea",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "discord.js": "^14.17.3"
+  }
+}
