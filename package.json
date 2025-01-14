@@ -17,7 +17,7 @@
     "url": "git+https://github.com/jacerea/unc-sport-chatbot.git"
   },
   "license": "MIT",
-  "author": "Jace Rea",
+  "author": "Jace Rea & Ryan Krazinzki",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
