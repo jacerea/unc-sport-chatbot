@@ -6,12 +6,6 @@ module.exports = {
 		.setName('ping')
 		.setDescription('Replies with Pong!'),
 	async execute(interaction) {
-		try {
-			await interaction.reply('Pong!');
-		}
-		catch (error) {
-			console.error(error);
-			await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-		}
+		await interaction.reply('Pong!');
 	},
 };
