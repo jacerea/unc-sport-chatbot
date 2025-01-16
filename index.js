@@ -17,9 +17,6 @@ client.once(Events.ClientReady, readyClient => {
 	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
 });
 
-// Log in to Discord with your client's token
-client.login(token);
-
 // All for command handling
 client.commands = new Collection();
 
@@ -77,3 +74,6 @@ client.on(Events.InteractionCreate, async interaction => {
 		}
 	}
 });
+
+// Log in to Discord with your client's token
+client.login(token);
