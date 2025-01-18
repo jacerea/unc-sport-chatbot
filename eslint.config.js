@@ -1,3 +1,5 @@
+//  I can change this if I want to, lowkey this gettin annoying like bro I know when there is a space and when there is no space.
+
 const js = require('@eslint/js');
 
 module.exports = [

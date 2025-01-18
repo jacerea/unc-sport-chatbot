@@ -1,3 +1,12 @@
+/*
+	Listen, I want to be able to talk it out and maybe psuedocode this.
+	I dont really know how I want to code the commands yet.
+	Do I want a command for each sport?
+	Do I want one command to ask for the sport and then stats or the calendar or something like that?
+	Take this weekend to figure it out
+	- Jace 1-18-25
+*/
+
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
