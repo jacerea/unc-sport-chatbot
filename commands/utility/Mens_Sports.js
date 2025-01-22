@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('UNC_Mens_Sports')
+		.setName('unc-mens-sports')
 		.setDescription('Lists all the sports played by the UNC men\'s teams'),
 	async execute(interaction) {
 		const mensSports = [
