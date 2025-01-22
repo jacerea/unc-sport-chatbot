@@ -1,3 +1,6 @@
+// This will output all of the sports that UNC men play at UNC
+// For more commands, please jace keep in mind that you have to run your deploy-commands.js script in order for the bot to reapply the commands in the folder.
+
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
