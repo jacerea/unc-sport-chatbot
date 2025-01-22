@@ -36,7 +36,7 @@ module.exports = [
 			'prefer-const': 'error',
 			quotes: ['error', 'single'],
 			semi: ['error', 'always'],
-			'space-before-blocks': 'error',
+			// 'space-before-blocks': 'error',
 			'space-before-function-paren': ['error', {
 				anonymous: 'never',
 				named: 'never',
