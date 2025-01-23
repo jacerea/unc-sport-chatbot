@@ -5,6 +5,7 @@
 	Do I want one command to ask for the sport and then stats or the calendar or something like that?
 	Take this weekend to figure it out
 	- Jace 1-18-25
+	https://goheels.com/sports/mens-basketball/schedule/text this is for the API poss
 */
 
 const fs = require('node:fs');
