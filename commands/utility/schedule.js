@@ -1,4 +1,4 @@
-// I still have to run the deploy commands to make sure this gets in the bot, I will do this once we make sure the scraper works.
+// Command is deployed and it does work, however need to fix the scraper
 
 const { SlashCommandBuilder } = require('discord.js');
 const { exec } = require('child_process');
