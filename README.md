@@ -28,7 +28,7 @@ Here are some of the commands you can use:
 
 | Command            | Description                                  |  
 |---------------------|----------------------------------------------|  
-| `/schedule [team]` | Get the upcoming game schedule for a team.  |  
+| `/schedule [sport]` | Get the upcoming game schedule for a sport.  |  
 | `/updates`         | Get the latest UNC sports updates.          |  
 | `/stats [team]`    | View stats for a specific UNC team.          |  
 | `/notify [event]`  | Subscribe to notifications for big events.  |  
