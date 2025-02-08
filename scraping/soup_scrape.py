@@ -1,3 +1,4 @@
+"""
 from bs4 import BeautifulSoup
 import requests
 
@@ -42,26 +43,27 @@ def team_stats(season: str, team: str) -> list[str]:
 (team_stats(season=season, team=team))
 
 """
-from bs4 import BeautifulSoup
 import requests
 import sys
 import json
 
 def get_schedule(season: str, team: str):
-    URL = f"https://goheels.com/sports/{team}/schedule/{season}"
-    RESPONSE = requests.get(URL)
+    # Adjust the URL to use the /text format
+    URL = f"https://goheels.com/sports/{team}/schedule/text"
+
+    # Try making a request
+    HEADERS = {"User-Agent": "Mozilla/5.0"}
+    RESPONSE = requests.get(URL, headers=HEADERS)
 
     if RESPONSE.status_code != 200:
         return json.dumps({"error": f"Failed to retrieve schedule for {team} ({season})"})
 
-    SOUP = BeautifulSoup(RESPONSE.text, "html.parser")
-    games = []
+    # Get raw text from the response
+    schedule_text = RESPONSE.text.strip()
 
-    for game in SOUP.find_all("div", class_="sidearm-schedule-game"):
-        date = game.find("div", class_="sidearm-schedule-game-date").text.strip() if game.find("div", class_="sidearm-schedule-game-date") else "TBD"
-        opponent = game.find("div", class_="sidearm-schedule-game-opponent-name").text.strip() if game.find("div", class_="sidearm-schedule-game-opponent-name") else "Unknown Opponent"
-        result = game.find("div", class_="sidearm-schedule-game-result").text.strip() if game.find("div", class_="sidearm-schedule-game-result") else "No Result"
-        games.append(f"{date}: {opponent} ({result})")
+    # Split the text by lines and clean it up
+    lines = schedule_text.split("\n")
+    games = [line.strip() for line in lines if line.strip()]
 
     return json.dumps(games)
 
@@ -73,4 +75,3 @@ if __name__ == "__main__":
     season = sys.argv[1]
     team = sys.argv[2]
     print(get_schedule(season, team))
-"""
