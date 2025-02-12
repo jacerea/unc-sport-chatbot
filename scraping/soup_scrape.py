@@ -1,3 +1,4 @@
+"""
 from bs4 import BeautifulSoup
 import requests
 import json
@@ -44,3 +45,37 @@ def team_stats(season: str, team: str) -> list[str]:
     return full_list
 
 (team_stats(season=season, team=team))
+
+"""
+import requests
+import sys
+import json
+
+def get_schedule(season: str, team: str):
+    # Adjust the URL to use the /text format
+    URL = f"https://goheels.com/sports/{team}/schedule/text"
+
+    # Try making a request
+    HEADERS = {"User-Agent": "Mozilla/5.0"}
+    RESPONSE = requests.get(URL, headers=HEADERS)
+
+    if RESPONSE.status_code != 200:
+        return json.dumps({"error": f"Failed to retrieve schedule for {team} ({season})"})
+
+    # Get raw text from the response
+    schedule_text = RESPONSE.text.strip()
+
+    # Split the text by lines and clean it up
+    lines = schedule_text.split("\n")
+    games = [line.strip() for line in lines if line.strip()]
+
+    return json.dumps(games)
+
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print(json.dumps({"error": "Missing arguments. Usage: python script.py <season> <team>"}))
+        sys.exit(1)
+
+    season = sys.argv[1]
+    team = sys.argv[2]
+    print(get_schedule(season, team))
