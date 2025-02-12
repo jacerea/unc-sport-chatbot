@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import json
 
 # Define the site page and retrieve the HTML data
 # URL = "https://goheels.com/sports/baseball/schedule/text" # Baseball schedule
@@ -37,6 +38,9 @@ def team_stats(season: str, team: str) -> list[str]:
             idx += 1
         idx +=1 
     print(full_dict)
+
+    with open("mens-basketball-2425.json", "w") as fp:
+        json.dump(full_dict , fp) 
     return full_list
 
 (team_stats(season=season, team=team))
